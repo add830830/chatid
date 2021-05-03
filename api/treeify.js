@@ -1,5 +1,5 @@
 const html = require('html-escaper')
-const codes = require('./node_modules/iso-lang-codes/src/index.js')
+const codes = require('../node_modules/iso-lang-codes/src/index.js')
 
 exports.renderTree = function (object, title = 'Root') {
   return `<b>${title.toString()}</b>\n${renderLines(object).join('\n')}`
