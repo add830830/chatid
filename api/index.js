@@ -338,4 +338,12 @@ const getUsername = async function () {
 }
 getUsername()
 
-bot.startPolling()
+bot.launch({
+  webhook: {
+    domain: process.env.BOT_DOMAIN,
+    hookPath: '/api/index',
+  },
+});
+
+process.once('SIGINT', () => bot.stop('SIGINT'));
+process.once('SIGTERM', () => bot.stop('SIGTERM'));
